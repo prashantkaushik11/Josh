@@ -7,6 +7,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class First {
     @RequestMapping("/")
     public String myName(){
-        return "index";
+        return "home";
+    }
+    @RequestMapping("/a")
+    public String myName2(){
+        return "register";
     }
 }
