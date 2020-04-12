@@ -2,19 +2,16 @@ package com.josh.model;
 /**
  * Created By Prashant on 5 april 2020
  */
+
 import org.hibernate.validator.constraints.NotEmpty;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 import java.io.Serializable;
-
-
 @Entity
 public class FootBall implements Serializable {
-    private static final long serialVersionUID = -673889481046796399L;
 
+
+    private static final long serialVersionUID = -911939276603213157L;
     @Id
     @GeneratedValue
     private int footballTeamId;
@@ -25,15 +22,16 @@ public class FootBall implements Serializable {
     @NotEmpty(message="registered Student Name Must Not be Empty")
     private String registeredStudentName;
 
-    private String courseName;
+    @NotEmpty(message="1st Phone Number must not be Empty")
+    private String firstPhoneNumber;
 
-    public int getFootballTeamId() {
+    @NotEmpty(message="2nd Phone Number must not be Empty")
+    private String secondPhoneNumber;
+
+    public int getFootBallTeamId() {
         return footballTeamId;
     }
 
-    public void setFootballTeamId(int footballTeamId) {
-        this.footballTeamId = footballTeamId;
-    }
 
     public String getTeamName() {
         return teamName;
@@ -49,14 +47,6 @@ public class FootBall implements Serializable {
 
     public void setRegisteredStudentName(String registeredStudentName) {
         this.registeredStudentName = registeredStudentName;
-    }
-
-    public String getCourseName() {
-        return courseName;
-    }
-
-    public void setCourseName(String courseName) {
-        this.courseName = courseName;
     }
 
     public String getFirstPhoneNumber() {
@@ -83,13 +73,8 @@ public class FootBall implements Serializable {
         this.course = course;
     }
 
-    @NotEmpty(message="1st Phone Number must not be Empty")
-    private String firstPhoneNumber;
-
-    @NotEmpty(message="2nd Phone Number must not be Empty")
-    private String secondPhoneNumber;
-
     @OneToOne
     private Course course;
+
 
 }

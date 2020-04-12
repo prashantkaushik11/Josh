@@ -5,22 +5,32 @@ package com.josh.model;
   */
 
 import org.hibernate.validator.constraints.NotEmpty;
+import org.springframework.web.multipart.MultipartFile;
+
 
 import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
 public class Student implements Serializable {
-    private static final long serialVersionUID = 8829443568592117912L;
+
+    private static final long serialVersionUID = 2152764460241618790L;
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int studentId;
 
     @NotEmpty (message = "The student name must not be null")
     private String studentName;
 
-    @NotEmpty(message="The Course Name Must Not Be Empty")
-    private String courseName;
+    public MultipartFile getStudentImage() {
+        return studentImage;
+    }
+
+    public void setStudentImage(MultipartFile studentImage) {
+        this.studentImage = studentImage;
+    }
+    @Transient
+    private MultipartFile studentImage;
 
     @NotEmpty (message= "The student email must not be null")
     private String studentEmail;
@@ -34,10 +44,29 @@ public class Student implements Serializable {
     @NotEmpty(message= "The student password must not be null")
     private String password;
 
+    @NotEmpty(message= "ReType Password")
+    private String reTypePassword;
+
     private boolean enabled;
 
+    public Student() {
+    }
+
+    public String getReTypePassword() {
+        return reTypePassword;
+    }
+
+    public void setReTypePassword(String reTypePassword) {
+        this.reTypePassword = reTypePassword;
+    }
+
     @ManyToOne
-    @JoinColumn(name="courseId")
+    @JoinColumns({
+            @JoinColumn(
+                    name = "courseName"),
+            @JoinColumn(
+                    name = "year")
+    })
     private Course course;
 
     public int getStudentId() {
@@ -54,14 +83,6 @@ public class Student implements Serializable {
 
     public void setStudentName(String studentName) {
         this.studentName = studentName;
-    }
-
-    public String getCourseName() {
-        return courseName;
-    }
-
-    public void setCourseName(String courseName) {
-        this.courseName = courseName;
     }
 
     public String getStudentEmail() {

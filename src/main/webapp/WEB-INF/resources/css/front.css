@@ -2,7 +2,23 @@ body{
 	background : #cce0ff;
 	font-family: "Nunito",sans-serif;
 }
-
+#eventjumbotron2{
+	width:100%;
+	font-size: 1.5rem;
+	color: #003366;
+	font-weight:400;
+}
+#eventjumbotron2 h3{
+	font-weight:700;
+	padding-right:0px;
+}
+#eventjumbotron2 hr {
+	width: 450px;
+	margin-left: auto;
+	margin-right: auto ;
+	border-top: 1px solid #f8f8f8;
+	border-bottom: 1px solid rgba(0,0,0,0.2);
+}
 #mainNavbar{
 	color: #003366;
 	font-size: 1.5rem;
@@ -12,16 +28,16 @@ body{
 	font-size: 1.5rem;
 }
 .navbar.scrolled {
-    background: rgb(128, 255, 229);
-    transition: background 500ms;
+	background: rgb(128, 255, 229);
+	transition: background 500ms;
 }
 .carousel-inner > .carousel-item {
-   height: 400px;
+	height: 400px;
 }
 #eventjumbotron {
-            /*background: url("imgs/header.jpeg") ;*/
-             background: url("../images/header.jpeg") center center / cover no-repeat;
-        }
+	/*background: url("../images/header.jpeg") ;*/
+	background: url("../images/header.jpeg") center center / cover no-repeat;
+}
 #slide1 {
 	background:url("../images/sports2.jpg");
 	background-repeat: no-repeat;
@@ -43,18 +59,18 @@ body{
 .content{
 	padding-top: 3%;
 	text-align: center;
-    text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
-                 0px 8px 13px rgba(0,0,0,0.1),
-                 0px 18px 23px rgba(0,0,0,0.1);
+	text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+	0px 8px 13px rgba(0,0,0,0.1),
+	0px 18px 23px rgba(0,0,0,0.1);
 }
 .content h1{
 	font-weight: 700;
 	font-size: 3em;
 }
 hr {
-    width: 400px;
-    border-top: 1px solid #f8f8f8;
-    border-bottom: 1px solid rgba(0,0,0,0.2);
+	width: 400px;
+	border-top: 1px solid #f8f8f8;
+	border-bottom: 1px solid rgba(0,0,0,0.2);
 }
 #eventjumbotron h2{
 	font-weight:300;
@@ -65,8 +81,8 @@ hr {
 	font-size:25px;
 }
 #joshbanner {
-     margin-top: 30px;
-    }
+	margin-top: 30px;
+}
 .Nav {
 	height: 100%;
 	width: 0;
@@ -100,7 +116,7 @@ hr {
 	font-size: 30px
 }
 @media (max-width: 500px) {
-    #joshbanner {
-     margin-top: 200px;
-    }
+	#joshbanner {
+		margin-top: 200px;
+	}
 }

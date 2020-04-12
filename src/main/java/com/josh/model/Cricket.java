@@ -22,8 +22,6 @@ public class Cricket implements Serializable {
     @NotEmpty(message="registered Student Name Must Not be Empty")
     private String registeredStudentName;
 
-    private String courseName;
-
     @NotEmpty(message="1st Phone Number must not be Empty")
     private String firstPhoneNumber;
 
@@ -34,9 +32,6 @@ public class Cricket implements Serializable {
         return cricketTeamId;
     }
 
-    public void setCricketTeamId(int cricketTeamId) {
-        this.cricketTeamId = cricketTeamId;
-    }
 
     public String getTeamName() {
         return teamName;
@@ -52,14 +47,6 @@ public class Cricket implements Serializable {
 
     public void setRegisteredStudentName(String registeredStudentName) {
         this.registeredStudentName = registeredStudentName;
-    }
-
-    public String getCourseName() {
-        return courseName;
-    }
-
-    public void setCourseName(String courseName) {
-        this.courseName = courseName;
     }
 
     public String getFirstPhoneNumber() {

@@ -2,6 +2,7 @@ package com.josh.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 /**
@@ -12,12 +13,12 @@ import javax.persistence.Id;
 public class Users {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int usersId;
     private String username;
     private String password;
     private boolean enabled;
-    private int customerId;
+    private int studentId;
 
     public int getUsersId() {
         return usersId;
@@ -51,11 +52,11 @@ public class Users {
         this.enabled = enabled;
     }
 
-    public int getCustomerId() {
-        return customerId;
+    public int getStudentId() {
+        return studentId;
     }
 
-    public void setCustomerId(int customerId) {
-        this.customerId = customerId;
+    public void setStudentId(int studentId) {
+        this.studentId = studentId;
     }
 }

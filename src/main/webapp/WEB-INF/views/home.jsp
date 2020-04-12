@@ -48,8 +48,14 @@
                 <div class="col-10 col-lg-8 blurb mb-5 mb-md-0">
                     <h2>CRICKET!</h2>
                     <p class="lead">Give yourself a chance to be a part of the most loved game of India.</p>
-                    <button class="btn btn-default btn-lg">Register Here!</button>
-                    <button class="btn btn-default btn-lg">Download Rules!</button>
+                    <c:if test="${pageContext.request.userPrincipal.name!=null}">
+                        <a href="<c:url value="/student/cricket/register"/>"><button class="btn btn-default btn-lg">Register Here!</button></a>
+                        <a href="<c:url value="/student/document/display"/>"><button class="btn btn-default btn-lg">Download Rules!</button></a>
+                    </c:if>
+                    <c:if test="${pageContext.request.userPrincipal.name==null}">
+                        <a href="<c:url value="/login/"/>"><button class="btn btn-default btn-lg">Register Here!</button></a>
+                        <a href="<c:url value="/login/"/>"><button class="btn btn-default btn-lg">Download Rules!</button></a>
+                    </c:if>
                 </div>
             </div>
         </div>
@@ -60,8 +66,14 @@
                 <div class="col-10 col-lg-8 blurb mb-5 mb-md-0">
                     <h2>HOCKEY!</h2>
                     <p class="lead">Give yourself a chance to be a part of the field hockey event</p>
-                    <button class="btn btn-default btn-lg">Register Here!</button>
-                    <button class="btn btn-default btn-lg">Download Rules!</button>
+                    <c:if test="${pageContext.request.userPrincipal.name!=null}">
+                        <a href="<c:url value="/student/hockey/register"/>"><button class="btn btn-default btn-lg">Register Here!</button></a>
+                        <a href="<c:url value="/student/document/display"/>"><button class="btn btn-default btn-lg">Download Rules!</button></a>
+                    </c:if>
+                    <c:if test="${pageContext.request.userPrincipal.name==null}">
+                        <a href="<c:url value="/login/"/>"><button class="btn btn-default btn-lg">Register Here!</button></a>
+                        <a href="<c:url value="/login/"/>"><button class="btn btn-default btn-lg">Download Rules!</button></a>
+                    </c:if>
                 </div>
             </div>
         </div>
@@ -78,8 +90,14 @@
                 <div class="col-10 col-lg-8 blurb mb-5 mb-md-0">
                     <h2>FOOTBALL!</h2>
                     <p class="lead">Give yourself a chance to be a part of the most played game of world </p>
-                    <button class="btn btn-default btn-lg">Register Here!</button>
-                    <button class="btn btn-default btn-lg">Download Rules!</button>
+                    <c:if test="${pageContext.request.userPrincipal.name!=null}">
+                        <a href="<c:url value="/student/football/register"/>"><button class="btn btn-default btn-lg">Register Here!</button></a>
+                        <a href="<c:url value="/student/document/display"/>"><button class="btn btn-default btn-lg">Download Rules!</button></a>
+                    </c:if>
+                    <c:if test="${pageContext.request.userPrincipal.name==null}">
+                        <a href="<c:url value="/login/"/>"><button class="btn btn-default btn-lg">Register Here!</button></a>
+                        <a href="<c:url value="/login/"/>"><button class="btn btn-default btn-lg">Download Rules!</button></a>
+                    </c:if>
                 </div>
             </div>
         </div>
@@ -90,8 +108,14 @@
                 <div class="col-10 col-lg-8 blurb mb-5 mb-md-0">
                     <h2>KABBADDI!</h2>
                     <p class="lead">Give yourself a chance to be a part of one of the most ancient game of world </p>
-                    <button class="btn btn-default btn-lg">Register Here!</button>
-                    <button class="btn btn-default btn-lg">Download Rules!</button>
+                    <c:if test="${pageContext.request.userPrincipal.name!=null}">
+                        <a href="<c:url value="/student/kabaddi/register"/>"><button class="btn btn-default btn-lg">Register Here!</button></a>
+                        <a href="<c:url value="/student/document/display"/>"><button class="btn btn-default btn-lg">Download Rules!</button></a>
+                    </c:if>
+                    <c:if test="${pageContext.request.userPrincipal.name==null}">
+                        <a href="<c:url value="/login/"/>"><button class="btn btn-default btn-lg">Register Here!</button></a>
+                        <a href="<c:url value="/login/"/>"><button class="btn btn-default btn-lg">Download Rules!</button></a>
+                    </c:if>
                 </div>
             </div>
         </div>

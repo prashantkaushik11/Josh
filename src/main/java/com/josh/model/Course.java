@@ -13,16 +13,21 @@ import java.util.List;
 public class Course implements Serializable {
 
     private static final long serialVersionUID = -8301829453830268637L;
+    @EmbeddedId
+    private CourseId courseId;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private int courseId;
-
-    private String courseName;
 
     @OneToMany(mappedBy="course",cascade=CascadeType.ALL,fetch=FetchType.EAGER)
     @JsonIgnore
     private List<Student> studentList;
+
+    public CourseId getCourseId() {
+        return courseId;
+    }
+
+    public void setCourseId(CourseId courseId) {
+        this.courseId = courseId;
+    }
 
     private String studentName;
 
@@ -30,21 +35,36 @@ public class Course implements Serializable {
     @JoinColumn(name="cricketTeamId")
     private Cricket cricket;
 
-    public int getCourseId() {
-        return courseId;
+    @OneToOne
+    @JoinColumn(name="footballTeamId")
+    private FootBall football;
+
+    @OneToOne
+    @JoinColumn(name="hockeyTeamId")
+    private Hockey hockey;
+
+    public Hockey getHockey() {
+        return hockey;
     }
 
-    public void setCourseId(int courseId) {
-        this.courseId = courseId;
+    public void setHockey(Hockey hockey) {
+        this.hockey = hockey;
     }
 
-    public String getCourseName() {
-        return courseName;
+    public Kabaddi getKabaddi() {
+        return kabaddi;
     }
 
-    public void setCourseName(String courseName) {
-        this.courseName = courseName;
+    public void setKabaddi(Kabaddi kabaddi) {
+        this.kabaddi = kabaddi;
     }
+
+    @OneToOne
+    @JoinColumn(name="kabaddiTeamId")
+    private Kabaddi kabaddi;
+
+
+
 
     public List<Student> getStudentList() {
         return studentList;
@@ -70,17 +90,13 @@ public class Course implements Serializable {
         this.cricket = cricket;
     }
 
-    public FootBall getFootball() {
+    public FootBall getFootBall() {
         return football;
     }
 
-    public void setFootball(FootBall football) {
+    public void setFootBall(FootBall football) {
         this.football = football;
     }
-
-    @OneToOne
-    @JoinColumn(name="footballTeamId")
-    private FootBall football;
 
 
 }
