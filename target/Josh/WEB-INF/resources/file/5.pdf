@@ -1,0 +1,42 @@
+#include<bits/stdc++.h>
+using namespace std;
+typedef long long ll;
+int main(){
+	ll a,b,c,til;
+	cin>>a>>b>>c;
+	til=ceil(sqrt(c));
+	ll value=0;
+	for(ll j=2;j<=till;j++){
+		if(c%j==0){
+			value=j;
+			break;
+		}
+	}
+	if(a==1){
+		cout<<c<<" "<<0;
+	}
+	else if(b==1){
+		cout<<0<<" "<<c;
+	}
+	else{
+		ll ans=INT_MAX,n1,n2;
+		for(ll j=0;j<=value;j++){
+			if(j*a<=c){
+				if(((c-a*j)%b)<ans){
+					ans=(c-a*j)%b;
+					n1=j;
+					n2=(c-a*j)/b;
+				}
+			}
+			if(j*b<=c){
+				if(((c-b*j)%a)<ans){
+					ans=(c-b*j)%a;
+					n1=(c-b*j)/a;
+					n2=j;
+				}
+			}
+		}
+		cout<<n1<<" "<<n2;
+	}
+	return 0;
+}
