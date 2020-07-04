@@ -35,15 +35,14 @@
             <a href="<c:url  value="/admin/document/display"/>">Display Documents</a>
             <a href="<c:url  value="/admin/document/addDocument"/>">Add Document</a>
             <a href="<c:url  value="/admin/document/deleteDocument"/>">Delete Document</a>
-            <a href="#">Portfolio</a>
-            <a href="#">Contact</a>
+            <a href="#">Contribute</a>
         </c:if>
         <c:if test="${pageContext.request.userPrincipal.name != 'admin'}">
             <a href="<c:url value="/"/>">Home</a>
-            <a href="#">My Info</a>
+            <a href="<c:url value="/student/studentInfo" />">My Info</a>
             <a href="<c:url  value="/student/document/display"/>">Downloads</a>
-            <a href="#">Portfolio</a>
-            <a href="#">Contact</a>
+            <a href="<c:url  value="/payment/newPayment"/>">Contribute</a>
+            <a href="<c:url  value="/student/contact"/>">Contact</a>
         </c:if>
 
     </div>

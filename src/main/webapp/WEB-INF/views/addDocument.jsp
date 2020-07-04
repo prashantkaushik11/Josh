@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="<c:url value="/resources/css/register.css"/>">
 </head>
 <body>
-<form:form action="${pageContext.request.contextPath}/admin/addDocument" method="post" commandName="document" enctype="multipart/form-data">
+<form:form action="${pageContext.request.contextPath}/admin/document/addDocument" method="post" commandName="document" enctype="multipart/form-data">
 <div class="container">
     <h1>Register Document</h1>
     <p class="lead">Please fill in this form to create a Document.</p>

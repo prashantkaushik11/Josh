@@ -4,6 +4,9 @@ import com.josh.model.Document;
 import com.josh.model.Student;
 import com.josh.service.DocumentService;
 import com.josh.service.StudentService;
+import javafx.application.Application;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.web.bind.annotation.AuthenticationPrincipal;
@@ -27,12 +30,15 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+
+
 /* *
 Created By prashant Kaushik on 10 april 2020
  */
 @Controller
 @RequestMapping("/student")
 public class StudentController {
+    Logger logger =  LoggerFactory.getLogger(Application.class);
     @Autowired
     private StudentService studentService;
     @Autowired
@@ -46,6 +52,10 @@ public class StudentController {
         return "studentinfo";
     }
 
+    @RequestMapping("/contact")
+    public String contactPage(){
+        return "contact";
+    }
     @RequestMapping(value = "/studentInfo", method = RequestMethod.POST)
     public String displayStudentInfoPost(@ModelAttribute("student") Student student, Model model, HttpServletRequest request) {
         deleteStudentImage(student.getStudentId(), request);
@@ -58,6 +68,7 @@ public class StudentController {
                 studentImage.transferTo(new File(path.toString()));
             } catch (Exception e) {
                 e.printStackTrace();
+                logger.info("failed " + e.toString());
                 throw new RuntimeException("Document saving failed", e);
             }
         }
@@ -70,7 +81,7 @@ public class StudentController {
         String rootDirectory = request.getSession().getServletContext().getRealPath("/");
 
         path = Paths.get(rootDirectory + "\\WEB-INF\\resources\\images\\" + studentId + ".png");
-
+        logger.info("path" + path.toString());
         File file = new File(path.toString());
 
         file.delete();

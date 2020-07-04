@@ -56,7 +56,7 @@ public class AdminController {
         documentService.deleteDocument(documentId);
         return "redirect:/admin/document/display";
     }
-    @RequestMapping("/document/addDocument")
+    @RequestMapping(value = "/document/addDocument", method = RequestMethod.GET)
     private String addDocument(Model model) {
         Document document = new Document();
         model.addAttribute("document", document);
